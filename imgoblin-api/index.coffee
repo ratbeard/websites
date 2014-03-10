@@ -54,7 +54,6 @@ app.post '/', (request, response) ->
 		return sendError(response, error) if error
 		url = "http://#{request.headers.host}/#{nameWithExtension}"
 		image = { name, url }
-		fs.unlink(tmpPath)
 		imageDb.insert(image, (error, image) ->
 			return sendError(response, error) if error
 			send(response, image)
@@ -67,7 +66,7 @@ app.post '/', (request, response) ->
 # DB
 #
 imageDb = new Datastore(
-	filename: '/data/imgoblin.json'
+	filename: DB_FILE
 	autoload: true
 )
 

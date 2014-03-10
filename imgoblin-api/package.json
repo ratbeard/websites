@@ -10,7 +10,8 @@
     "coffee-script": "~1.7.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+		"server": "coffee index.coffee"
   },
   "author": "a",
   "license": "ISC"
