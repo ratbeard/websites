@@ -2,7 +2,7 @@
   "name": "imgoblin4",
   "version": "0.0.0",
   "description": "a",
-  "main": "index.coffee",
+  "main": "app.coffee",
   "dependencies": {
     "cors": "~2.2.0",
     "express": "~3.4.8",
@@ -11,7 +11,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-		"server": "coffee index.coffee"
+		"server": "coffee app.coffee"
   },
   "author": "a",
   "license": "ISC"
