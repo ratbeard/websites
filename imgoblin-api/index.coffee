@@ -8,15 +8,16 @@ Datastore = require('nedb')
 # Server
 #
 PORT = 7777
-DB_FILE = "~/images.json"
-IMAGES_DIR = path.join(__dirname, '..', "public")
-UPLOADS_DIR = path.join(__dirname, '..', "uploads")
+DB_FILE = "/data/imgoblin/db.json"
+UPLOADS_DIR = "/data/imgoblin/uploads"
+IMAGES_DIR = "/data/imgoblin/images"
 
 app = express()
 app.use(express.logger('dev'))
 #app.use(cors())
 app.use(express.bodyParser(keepExtensions: true, uploadDir: UPLOADS_DIR))
 app.use(express.static(IMAGES_DIR))
+console.log("Listening on port #{PORT}")
 app.listen(PORT)
 
 sendError = (response, message) ->
