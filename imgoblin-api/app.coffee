@@ -8,9 +8,11 @@ Datastore = require('nedb')
 # Server
 #
 PORT = 7777
-DB_FILE = "/home/app/db.json"
+DB_FILE = "/data/imgoblin-db.json"
 UPLOADS_DIR = "/home/app/uploads/"
 IMAGES_DIR = "/home/app/public"
+
+console.log "db file: #{DB_FILE}"
 
 app = express()
 app.use(express.logger('dev'))
