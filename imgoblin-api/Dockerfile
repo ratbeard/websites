@@ -3,7 +3,7 @@ FROM phusion/passenger-full:0.9.8
 ENV HOME /root
 
 # Nginx
-EXPOSE 7777
+EXPOSE 80
 RUN rm -f /etc/service/nginx/down
 ADD site.conf /etc/nginx/sites-enabled/default
 
