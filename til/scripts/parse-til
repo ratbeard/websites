@@ -1,0 +1,4 @@
+#!/usr/bin/env coffee
+path = require('path')
+
+tilFile = path.join(process.env.HOME, "notes", "til.md")
