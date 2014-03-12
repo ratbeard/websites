@@ -9,6 +9,7 @@ Basing off passenger-full image, which contains:
 - stripped down core, 10mb memory
 
 https://github.com/phusion/passenger-docker
+https://groups.google.com/forum/#!forum/passenger-docker
 
 Basic workflow:
 
@@ -18,6 +19,10 @@ Basic workflow:
 - see if it works.  if not, debug via:
 - docker ps -notrunc
 - sudo lxc-attach -n <container id>
+
+Easy attach:
+
+		sudo lxc-attach -n $(docker ps --no-trunc | grep imgoblin-api | awk '{print $1}')
 
 To run it in production (as a daemon):
 
