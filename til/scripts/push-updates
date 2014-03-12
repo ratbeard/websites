@@ -1,3 +1,9 @@
 #!/bin/bash
 
-echo "push updates"
+d=$(date)
+echo
+echo "[$d push updates]"
+cd /Users/admin/notes
+git add -A .
+git commit -m "Notes for $d"
+git push

@@ -1,0 +1,1 @@
+ 60 * * * * /Users/admin/code/websites/til/scripts/push-updates 2>&1 >> /Users/admin/log/til.log
