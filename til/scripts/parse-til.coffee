@@ -33,7 +33,8 @@ for token in tokens
 
 
 for day in days
-	console.log "\n"
-	console.log day.date.red
-	console.log day.text()
+	#console.log "\n"
+	#console.log day.date.red
+	#console.log day.text()
+	process.stdout.write(JSON.stringify(day) + "\n")
 
