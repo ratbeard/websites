@@ -10,15 +10,13 @@ run = ->
 		.pipe(process.stdout)
 
 parseDay = (text) ->
-	console.error 'day:'.red + text.length
 	return if !text.length
-	day = JSON.parse(text)
+	{date, content} = JSON.parse(text)
 	html = """
-		<article>
-			<h1>#{day.date}</h1>
-		</article>
+		<article id="#{date}">
+			<h1><a href="##{date}">#{date}</a></h1>
 	"""
-	for chunk in day.content
+	for chunk in content
 		switch chunk.type
 			when "paragraph"
 				html += "\n\t<p>#{chunk.text}</p>"
@@ -42,6 +40,8 @@ parseDay = (text) ->
 				html += "\n\t" + chunk.text.replace(/</g, '&lt;').replace(/>/g, '&gt;')
 			else
 				throw "Unknown type: " + chunk.type
+
+	html += "\n</article>"
 	@queue html
 
 run()
